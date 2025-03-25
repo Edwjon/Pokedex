@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct EvolutionChainResponse: Decodable {
+struct EvolutionChainResponse: Codable {
     let chain: EvolutionNode
 }
 
-struct EvolutionNode: Decodable {
+struct EvolutionNode: Codable {
     let species: PokemonInfo
     let evolves_to: [EvolutionNode]
 }

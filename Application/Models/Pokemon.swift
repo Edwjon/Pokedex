@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Pokemon: Decodable {
+struct Pokemon: Codable {
     let id: Int
     let name: String
     let types: [TypeSlot]
@@ -15,10 +15,10 @@ struct Pokemon: Decodable {
     let species: PokemonInfo
 }
 
-struct TypeSlot: Decodable {
+struct TypeSlot: Codable {
     let type: PokemonInfo
 }
 
-struct MoveSlot: Decodable {
+struct MoveSlot: Codable {
     let move: PokemonInfo
 }

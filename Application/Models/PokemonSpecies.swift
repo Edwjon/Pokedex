@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct PokemonSpecies: Decodable {
+struct PokemonSpecies: Codable {
     let evolution_chain: EvolutionChainLink
 }
 
-struct EvolutionChainLink: Decodable {
+struct EvolutionChainLink: Codable {
     let url: String
 }
