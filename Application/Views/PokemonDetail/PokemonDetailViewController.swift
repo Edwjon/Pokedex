@@ -14,8 +14,6 @@ final class PokemonDetailViewController: UIViewController {
     private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.alpha = 0
-        iv.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -81,11 +79,6 @@ final class PokemonDetailViewController: UIViewController {
         setupViews()
         configure()
         loadNetworkRequests()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        animateImage()
     }
     
     private func setupViews() {
@@ -174,18 +167,6 @@ final class PokemonDetailViewController: UIViewController {
         typesLabel.text = viewModel.typesText
         movesLabel.text = viewModel.movesText
         imageView.load(from: viewModel.imageURL)
-    }
-
-    private func animateImage() {
-        UIView.animate(withDuration: 0.4,
-                       delay: 0,
-                       usingSpringWithDamping: 0.75,
-                       initialSpringVelocity: 0.6,
-                       options: [.curveEaseOut],
-                       animations: {
-            self.imageView.alpha = 1
-            self.imageView.transform = .identity
-        })
     }
 }
 
