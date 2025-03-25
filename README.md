@@ -1,6 +1,6 @@
 # 🧬 Pokédex 151
 
-Una mini aplicación desarrollada como parte de un desafío técnico cuyo objetivo es demostrar buenas prácticas, arquitectura limpia (MVVM), uso de red asincrónica, persistencia y testing.
+Una mini aplicación cuyo objetivo es demostrar buenas prácticas, arquitectura limpia (MVVM), uso de red asincrónica, persistencia y testing.
 
 ## 🚀 Objetivo del Proyecto
 
