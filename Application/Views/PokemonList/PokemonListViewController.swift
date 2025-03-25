@@ -26,6 +26,7 @@ final class PokemonListViewController: UIViewController {
         collectionView.register(PokemonCell.self, forCellWithReuseIdentifier: PokemonCell.identifier)
         
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         return collectionView
     }()
@@ -88,6 +89,15 @@ extension PokemonListViewController: UICollectionViewDataSource {
         let pokemon = viewModel.pokemon(at: indexPath.item)
         cell.configure(with: pokemon)
         return cell
+    }
+}
+
+extension PokemonListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pokemon = viewModel.pokemon(at: indexPath.item)
+        let detailVM = PokemonDetailViewModel(pokemon: pokemon)
+        let detailVC = PokemonDetailViewController(viewModel: detailVM)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
